@@ -159,10 +159,52 @@ Rectangle permiter: 26"
 
 ```
 
+If statements
+---
+
+Condition in if statements are formed used comparison operators
+
+Example of these operators are:
+
+<img width="467" alt="image" src="https://github.com/user-attachments/assets/01afd711-0f72-4605-8cd8-7f4ba4feb595" />
 
 
+an example of a simple if statement would be this 
 
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/8697cd8b-e581-4fd0-8c42-4c07597dc763" />
 
+If statements become more powerful with logical operators such as these
 
+```
+&& = AND
+|| = OR
+
+```
+
+These logical operators can be used as this 
+
+```
+#!/bin/bash
+
+grade =95
+
+if [ $grade -ge 90 ] && [ $grade -le 100]
+then 
+  echo "Excellent"
+fi
+```
+
+Bash provides operates like the below to compare strings
+
+```
+== - meaning equals
+!= - meaning not equals to
+```
+
+An example of this would be as follows:
+
+<img width="554" alt="image" src="https://github.com/user-attachments/assets/e7459a47-4daa-4920-85b4-f9265d948eb3" />
+
+^ that would then print out "Hello, Ahmed" as the condition is met with the name variable
 
 
