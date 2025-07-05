@@ -208,3 +208,63 @@ An example of this would be as follows:
 ^ that would then print out "Hello, Ahmed" as the condition is met with the name variable
 
 
+Else and Elseif
+----
+
+The Else clause comes in when a condition is not false which gives you an alternative code block to execute when the initial condition is false
+
+Here is how it would work.
+
+![image](https://github.com/user-attachments/assets/656108e0-c4ae-4dd3-9eed-65f198e59f12)
+
+In this case, the age is set to 15 meaning that if the age is not greater than 18 the output will be "You are not an adult!"
+
+Elif allows us to add another condition if the first condition is false. This allows for multiple results to be printed 
+
+![image](https://github.com/user-attachments/assets/fe278ad6-c679-4abb-95a1-b54a00d6e272)
+
+In that example we can see that if the score is above 90 they get an "Excellent" and if they get above 80 they get a "Good". 
+
+If none of those conditions are met then they get a "better Luck next time".
+
+Nested If
+---
+Nested if statements allow us to create more complex decision making structures by embedding if statements within other if statements
+
+These if statements make it possible for us to have conditions that are met and if one of those conditions are not met, then the user can't go through.
+
+Example:
+
+![image](https://github.com/user-attachments/assets/a2b1bd97-19f7-4e85-b393-6085eaaaaf33)
+
+In this example we can see that the age is 18 and grade is 85. If the age is greater than 18 then they can move forward however their grade has to be higher than 
+
+Benefits of Nested If:
+- They allow the evaluation of multiple coniditons
+- They enhance the flexibility and versatility of bash scripts
+
+
+While loops
+---
+While loops allow you to execute a certain block of code whilst a certain condition remains true
+
+These while loops are caled by doing the following 
+
+![image](https://github.com/user-attachments/assets/fba86d11-6de0-4306-96d2-dfea40accd10)
+
+
+While loops can also be used to process data from arrays or files, allowing you to automate tasks that involve iterative operations.
+
+![image](https://github.com/user-attachments/assets/0dbe2e77-0e76-4015-8365-89a557d9479a)
+
+In this example we see the array that is held in the fruits variable - (array meaning list)
+
+The index value is set to 0 and we have done a while loop that iterates over the arrays in Fruits until it finishes. 
+
+Within each iteration it will print out the current fruit and increments the index variable by one.
+
+```
+echo "Fruit: ${fruits[$index]}"
+((index++))
+done
+```
