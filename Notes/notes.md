@@ -268,3 +268,47 @@ echo "Fruit: ${fruits[$index]}"
 ((index++))
 done
 ```
+
+This loop will continue until all the elements in the array are processed - e.g. this time there is only 3 fruits (apple, banana, orange) so it will go from 0,1,2,3 and since there isn't a 4th element in the array the while loop will exit.
+
+To summarize this, while loops allow you to execute a block of code as long as the condition is true. This condition is evaluated before each iteration and the loop will continue until the condition becomes false.
+
+These while loops are important for automating tasks and iterating data.
+
+
+For Loops
+---
+
+For loops allow you to iterate over a sequence of values and perform repetitve tasks. Once again For loops are also powerful for automating tasks and processing data.
+
+![image](https://github.com/user-attachments/assets/f5fa607b-221a-4919-8723-05552e6165e9
+
+This example is similar to the while loops example but in this case the for loop iterates over each element in the fruits array which is set in the fruits variable at the top.
+
+This loop then repeats over 3 times and prints out "Fruits: $fruit"
+
+These loops can be used to iterate over a range of values using the sequence command by doing the below
+
+![image](https://github.com/user-attachments/assets/b4be5830-eb46-41a4-aefa-415de11e324f)
+
+The sequence command will generate a sequence of numbers from the first arguement which in this case is 1, up until the second argument which is 5.
+
+The output of the command is then passed in as the input for the for loop and assigned to the variable number for each element in the sequence
+
+The variable in the loop take on each value in the sequence and the code block between the do and done keyword is what's executed each time till the condition becomes false - Condition becomes false in this case when the loop is done until the number 5 which ends the for loop
+
+For loops can be used with arrays, lists of values or ranges to automate tasks
+
+Here is a another example of how you can do ranges without sequence 
+
+```
+for (( i=1; i<=5; i++ ))
+do
+echo "Number: $i"
+done
+```
+
+So what's done here is the variable that is set is i which equals 1. Then the sequence is i being less than our equal to 5 and finally the variable i is then incremented each time so the number goes up in the sequence - ++ is the expressions used for adding one to the element
+
+
+
