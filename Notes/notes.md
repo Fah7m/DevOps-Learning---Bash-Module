@@ -311,4 +311,40 @@ done
 So what's done here is the variable that is set is i which equals 1. Then the sequence is i being less than our equal to 5 and finally the variable i is then incremented each time so the number goes up in the sequence - ++ is the expressions used for adding one to the element
 
 
+Break and Continue in loops
+---
 
+Break and Continue statements provide additional control within for and while loops allowing you to interrupt or skip iterations based on specific conditions.
+
+The break statement will immediately exit the loop if the condition that is set is met.
+
+![image](https://github.com/user-attachments/assets/52e4c3fc-3b2f-4e38-a39f-bd311ee5b8ae)
+
+In this example the condition for the break statement is if the value of i is = to 3 then we will break the for loop and close the if statement - also a echo Number: $i for each number
+
+The output will only be number 1 and 2 as it breaks at number 3
+
+The continue statement will do the opposite as instead of breaking it will just continue on and skip over 3
+
+![image](https://github.com/user-attachments/assets/5aae919f-644b-4641-9443-96e3be0c5378)
+
+
+An example of a break statement in a while loop would be the below
+
+![image](https://github.com/user-attachments/assets/cb55b913-8a91-47db-86af-9357ef134421)
+
+The while true statement means that the loop will continue indefinitely unless the loop is broken
+
+Then the value of count is incremented and echoed until count equals 4 and that's where the while loop is broken.
+
+The output would go up to 3 and exit the loop
+
+An example of a continue statement would be
+
+![image](https://github.com/user-attachments/assets/552b595f-0126-4aa2-bd02-6dcd56d5d40c)
+
+In the while condition we can see if count is less than 5 then the following codeblock in do is executed meaning that the loop will end once the count hits 5
+
+In the do codeblock the condition that is set is if count is equal to 3 then we just increment it by one and continue one with the rest of while loop
+
+Which the rest of the loop is just the count variable incremented and echoed
