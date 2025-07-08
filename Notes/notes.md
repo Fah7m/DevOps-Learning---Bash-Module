@@ -348,3 +348,138 @@ In the while condition we can see if count is less than 5 then the following cod
 In the do codeblock the condition that is set is if count is equal to 3 then we just increment it by one and continue one with the rest of while loop
 
 Which the rest of the loop is just the count variable incremented and echoed
+
+
+Functions 
+---
+
+Functions are defined using the function name followed by parentheses and curly braces. The code is encapsulated within the curly braces 
+
+Parameters can be accepted in functions to make it more flexible and reusable
+
+![image](https://github.com/user-attachments/assets/c407a320-f836-4dce-a7bd-4dac6a928e5e)
+
+In the example above, we can see two functions "hello world" and "greet person".
+
+Within the second function a name variable is set and parsed through the parameter $1 so that - this $1 is used to parse information into the variable in the output.
+
+The variable name is echoed along with hello and at the end of the code we see the two strings that are parsed into the name variable - so Ahmed becomes the name variable first then Sam after.
+
+Parameters within functions
+--
+
+Function parameters provide a way to parse data to functions enabling them to perform specific tasks based on provided inputs
+
+Positional parameters allow us to pass data to functions and access them using numbered variables like 
+
+```
+echo "hello, $1"
+echo "hello, $2"
+```
+
+Special parameters provide additional information about the script and the arguments passed to it, such as 
+
+```
+$# -- for number of arguments
+$0 -- for the name of the script
+$@ -- for the print of all arguments
+```
+
+
+User input
+---
+User input allows users to interact with our scripts to make it more interactive and powerful. By accepting user input within functions we can reate powerful interactive scripts
+
+The read command is used to take the users input and store it in a variable as follows:
+
+![image](https://github.com/user-attachments/assets/8b4ac083-1e69-473b-86a3-15afb4cd7a81)
+
+We can see "read name" in the function - here is where the user input is stored into the variable and then is later echoed
+
+greet_user at the bottom is used to call the function
+
+![image](https://github.com/user-attachments/assets/30a77c56-12a8-4fbc-8144-c746cf64368e)
+
+In this example we can see that in the greet function the variable is set first
+
+Then a condition is set where the number of parameters are = to 0 then a user input is taken by doing the following 
+
+```
+echo "what is your name"
+read name
+```
+
+Then a else condition is set where name=$1 - this here will take the parameter that is passed which is seen at the bottom of the script "greet abdurahman"
+
+
+Handling bad data
+---
+
+Bad data refers to invalid or unexpected user inputs that may cause errors or undesired errors in our scripts.
+
+This is why error handling is important in functions.
+
+
+![image](https://github.com/user-attachments/assets/f32beb2b-4b55-4cfd-8ac9-ff052d002dfd)
+
+In this example we have a validate age script
+
+What is first being done is the variable age will take the value of the argument that is passed.
+
+```
+local name=$1
+```
+
+Then there is a conditional statement which does the following 
+
+if $age contains (=~ checks to see if regex is matched)  
+
+```
+^[0-9]+$ - the regex
+```
+
+The regex starts off with the ^ then the regex has [0-9] which only allows digits, then a + to allow for one or more times and a $ to end off the string
+
+If this is not met then a non zero exit code is returned which suggests that we have a issue in the function
+
+```
+return 1 - error handling
+```
+
+Same thing is done for the 2nd part of the function which a non zero will be returned if the age is less than 18
+
+![image](https://github.com/user-attachments/assets/a24ec9d3-fcec-45f2-8c60-7ba671b8f2a9)
+
+If both conditions are met then a congratulations is echoed and 0 is returned specifying this is the desired outcome for the function
+
+![image](https://github.com/user-attachments/assets/82379ca3-d8c8-475b-9286-1f5aa1a36a71)
+
+At the end of the script there is more error handling to make sure that the right exit code is returned (either 1 or 0)
+
+![image](https://github.com/user-attachments/assets/cb04a9fb-cf3d-4142-9828-82c07e4a1461)
+
+First the a user input is taken in the variable user_age and that is parsed as parameter in the function validate_age to take information form the user
+
+Next a variable is created for the exit_code by using $? - this will store the exit so anything other than 0 results in failure
+
+Conditional checking is then added to check if the value is 0 or not
+
+So the final if statement checks if the exit_code variable does not equal (!=) to zero then a message will be echoed
+
+Another technique to handle bad data is by implemenet input sanitization which basically changes the users input to accept certain characters
+
+![image](https://github.com/user-attachments/assets/5225eb30-b177-436a-856b-0c0343feb3cb)
+
+Here we have a function named sanitize string being called
+
+Within the function we have the variable input set as $1 and sanitized_input variable set to have pattern substitution of the input variable - "${input//[^a-zA-Z0-9]/}" this takes the input variable and only allows for alphanumeric values.
+
+Next in the script a input is taken with the read command
+
+Lastly the variable "sanitized_username" is assigned to the value returned by the function "sanitize_string", followed by the user input that was taken "$input_username"
+
+Then the sanitized username is echoed once the username has been cleaned - removed any non numeric or string characters.
+
+![image](https://github.com/user-attachments/assets/ef8e220c-01b2-4925-80d6-3a2f4063138a)
+
+
