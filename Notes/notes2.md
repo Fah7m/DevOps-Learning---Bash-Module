@@ -92,5 +92,88 @@ Anything after the error in the script will not run - there are some exit codes 
 
 Set -e wouldn't be used in cases where you want a non zero exit code and the script to carry on.
 
+**Set -u** stops the script from executing if there are uninitialized variables in the script
 
+For example:
+![image](https://github.com/user-attachments/assets/2f899c36-eeb6-4866-b784-0019cb8535f6)
+
+We can see the script fails because variable X is not set.
+
+![image](https://github.com/user-attachments/assets/db7b8901-eeaa-4783-bb93-fec1a262cc56)
+
+In this example we can see the variables X and Y are set but W is not which still causes the script not to run. Set - u stops the script from running into potential problems due to missing data.
+
+Best use case for Set -u would be for scipts that depend on certain variables being initialized 
+
+**Set -x ** prints each command that will be executed in the terminal before it actually executes. This is useful for following the flow of your script.
+
+![image](https://github.com/user-attachments/assets/ea909988-d59b-4a41-8a71-4207309fca21)
+
+Set -x is very useful when troubleshooting scripts so you can precisely see where it is going wrong.
+
+A combination of Set -x and Set +x is very useful when you want to debug a certain part of your script.
+
+Example output would be this 
+![image](https://github.com/user-attachments/assets/62c6ef78-681d-4226-9167-043f7fbbb78f)
+
+**Set -eux** is simply a combination of e, u, and x.
+
+This combo will execute the script, prints each command before execution and stops at the failing command.
+
+Other set commands are:
+
+**Set -o nounset** - equivalent to set -u which helps you catch undefined variables
+**Set -o errexit** - same as set -e which exits the script if a non zero error code is returned (basically if the script has a error it wont run) - Also runs the script up to where it fails
+**Set -o pipefail** - - this will cause a pipeline to fail if the last command in the pipleline has failed.
+![image](https://github.com/user-attachments/assets/7c78100c-0f9a-4626-ad53-cf6f525ca4c1)
+
+Here we see that a file is being cat'd which doesn't exist and then a pipe is used to grep a word in that fine. This set -o pipefail doesn't move on to the grep command because the first command in the pipe has failed.
+
+Changing PATH variable permm
+---
+
+This variable is a critical system variable that specifies the directories where the shell should look for executable files.
+
+Our own directories can be added to PATH when installing new software or want scripts to be available system wide.
+
+Changes to PATH made in the terminal are temporary. To mae it permanent we add it to the ZHRC or BASHRC file 
+
+```
+echo "export PATH=$PATH:~/mydir" >> ~/.zshrc or bashrc
+```
+
+In this command we are appending to the zshrc or bashrc file and we are adding the export=blahblah line.
+
+Any binaries or executables that the system finds in the directory, it will take as a binary that can be run system wide.
+
+```
+source ./zshrc
+or
+source ./bashrc
+```
+
+The source command will put the changes into effect.
+
+Now that we have added a change to the PARTH variable where it looks into our directory, a simple file like a helloworld.sh which echos helloworld can be run system wide in any directory.
+
+![image](https://github.com/user-attachments/assets/25468c85-be4f-40f4-943c-51712d4c32be)
+
+Standard Env Variables
+---
+
+Here are sone standard environment variables that are already set in linux 
+
+![image](https://github.com/user-attachments/assets/9879202a-e729-4495-8975-abd5287b50c2)
+
+The PATH env variable will echo the executable paths and where the binaries are stored.
+
+The LANG env variable will echo the default language being used.
+
+![image](https://github.com/user-attachments/assets/c1e95af2-ae98-42ad-84bb-8f9896ea04c7)
+
+These will echo user for LOGNAME, the type of shell being used e.g. bin/bash or /bin/zsh and the current working directory - the directory you're currently in.
+
+Reading files 
+---
+Reading files is a important task in scripting, it allows us to access and extract information from various types of files.
 
