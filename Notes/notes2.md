@@ -105,7 +105,7 @@ In this example we can see the variables X and Y are set but W is not which stil
 
 Best use case for Set -u would be for scipts that depend on certain variables being initialized 
 
-**Set -x ** prints each command that will be executed in the terminal before it actually executes. This is useful for following the flow of your script.
+**Set -x** prints each command that will be executed in the terminal before it actually executes. This is useful for following the flow of your script.
 
 ![image](https://github.com/user-attachments/assets/ea909988-d59b-4a41-8a71-4207309fca21)
 
@@ -114,6 +114,7 @@ Set -x is very useful when troubleshooting scripts so you can precisely see wher
 A combination of Set -x and Set +x is very useful when you want to debug a certain part of your script.
 
 Example output would be this 
+
 ![image](https://github.com/user-attachments/assets/62c6ef78-681d-4226-9167-043f7fbbb78f)
 
 **Set -eux** is simply a combination of e, u, and x.
