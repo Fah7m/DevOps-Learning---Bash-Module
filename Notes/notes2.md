@@ -178,3 +178,20 @@ Reading files
 ---
 Reading files is a important task in scripting, it allows us to access and extract information from various types of files.
 
+**IFS=** Ensures that leading and trailing whitespaces are preserved. A example of how IFS can be used is below
+```
+IFS=","
+Line="apple,banana,orange"
+```
+This would simply tell the script to split the text only when there is a comma. So if you just did IFS= -this would tell the script not to split or break any text into separate lines at all.
+
+**Read** This command will essentially just read a single line in a file whereas a command like cat would read the whole file.
+You can use arguements like -r with read to not interpret backslashes as escape characters. 
+
+<img width="367" height="228" alt="image" src="https://github.com/user-attachments/assets/0a96c778-7b5f-4954-8993-7595592ce7eb" />
+
+In this example we are first creating a function and within that function we declare the file_path variable as $1 so that we can parse in a value later when calling the function.
+
+In the while loop we used IFS= to not make any separations when reading the file. Then we use the read command with the -r argument to read each line in the file which it does once each time and thats how the loop ends.
+Finally each line that is read is echo'd and the $file_path variable is parsed in so later in the script when we call the function we parse in the file that we want to execute the script on.
+
