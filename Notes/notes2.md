@@ -195,3 +195,15 @@ In this example we are first creating a function and within that function we dec
 In the while loop we used IFS= to not make any separations when reading the file. Then we use the read command with the -r argument to read each line in the file which it does once each time and thats how the loop ends.
 Finally each line that is read is echo'd and the $file_path variable is parsed in so later in the script when we call the function we parse in the file that we want to execute the script on.
 
+Writing files 
+---
+Writing files allow us to create modify and store information in various formats.
+
+<img width="489" height="341" alt="image" src="https://github.com/user-attachments/assets/c5918997-500c-4f0e-aea0-24caba1f738e" />
+
+In this example we can see that a the two variables are taking what is parsed in the script later. 
+
+The echo data  > file path is basically taing whatever is echo'd and pushing that on to the read.txt file.
+
+We can see that > is used which will essentially remove anything else that was on the file before - we can use >> to append whatever was already there and add on the echo'd line.
+
